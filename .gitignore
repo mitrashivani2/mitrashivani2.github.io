@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Local scratch and legacy files not needed for deployment
+/.tmp/
+/Brand Logos/
+/Professional Profile Picture.PNG
+/Work details.docx
+/portfolio-data.js
+/portfolio-desktop.png
+/portfolio-hero-desktop.png
+/portfolio-hero-mobile.png
+/portfolio-mobile.png
+/index.html
+/script.js
+/styles.css
