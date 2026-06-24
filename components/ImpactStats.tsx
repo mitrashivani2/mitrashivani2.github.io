@@ -3,26 +3,41 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import type { Portfolio } from "@/data/portfolio";
-import { Eyebrow } from "./SectionHeader";
+import { SectionHeader } from "./SectionHeader";
+
+const statCardClasses = [
+  "neo-card-accent-yellow",
+  "neo-card-accent-blue",
+  "theme-panel",
+  "neo-card-accent-orange"
+];
 
 export function ImpactStats({ portfolio }: { portfolio: Portfolio }) {
   return (
-    <section id="impact" className="border-y border-[color:var(--accent-border)] bg-[rgba(250,252,251,0.58)] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-      <div className="mx-auto mb-10 max-w-[1440px]">
-        <Eyebrow>By The Numbers</Eyebrow>
+    <section id="impact" className="section-frame section-light border-y-[2px] border-[var(--color-black)]">
+      <div className="mx-auto max-w-[1440px]">
+        <SectionHeader
+          eyebrow="By the numbers"
+          title="A campaign scoreboard built from launches, retention systems, and audience growth."
+          intro="These numbers reflect campaign scale, audience response, and client growth delivered across entertainment, culture, and consumer brands."
+          tone="green"
+        />
       </div>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="mx-auto grid max-w-[1440px] gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto grid max-w-[1440px] gap-[var(--gap-card-grid)] sm:grid-cols-2"
       >
-        {portfolio.metrics.map((metric) => (
-          <motion.article key={metric.label} variants={fadeUp} className="theme-panel-dark min-h-56 p-5">
-            <strong className="block font-serif text-5xl leading-none text-white lg:text-6xl">{metric.value}</strong>
-            <span className="mt-5 block text-sm font-extrabold uppercase text-[rgba(203,231,219,0.76)]">{metric.label}</span>
-            <p className="mt-3 text-sm leading-6 text-white/72">{metric.detail}</p>
+        {portfolio.metrics.map((metric, index) => (
+          <motion.article key={metric.label} variants={fadeUp} className={`stat-card ${statCardClasses[index % statCardClasses.length]}`}>
+            <div className="flex items-start justify-between gap-4">
+              <span className="neo-kicker">{metric.label}</span>
+              <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <strong className="stat-value mt-5 block">{metric.value}</strong>
+            <p className="card-body-text mt-1 max-w-[22rem]">{metric.detail}</p>
           </motion.article>
         ))}
       </motion.div>

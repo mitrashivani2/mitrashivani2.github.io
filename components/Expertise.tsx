@@ -6,18 +6,42 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 import type { Portfolio } from "@/data/portfolio";
 import { SectionHeader } from "./SectionHeader";
 
+const expertiseCardClasses = [
+  "neo-card-accent-yellow",
+  "theme-panel",
+  "neo-card-accent-green",
+  "theme-panel",
+  "neo-card-accent-orange",
+  "neo-card-accent-blue"
+];
+
 export function Expertise({ portfolio }: { portfolio: Portfolio }) {
   return (
-    <section className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <SectionHeader eyebrow="Core expertise" title="The operating system behind client growth, content velocity, and campaign performance." />
-      <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {portfolio.expertise.map((group) => (
-          <motion.article key={group.title} variants={fadeUp} className="theme-panel p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(8,15,13,0.1)]">
-            <Sparkles className="mb-10 h-6 w-6 text-[var(--accent)]" aria-hidden="true" />
-            <h3 className="text-2xl font-extrabold text-[var(--foreground)]">{group.title}</h3>
+    <section className="section-frame section-dark border-y-[2px] border-[var(--color-white)]">
+      <div className="mx-auto max-w-[1440px]">
+        <SectionHeader
+          eyebrow="Core expertise"
+          title="The operating system behind client growth, content velocity, and entertainment-ready campaign execution."
+          intro="These are the capabilities I bring into every brief, spanning strategy, content, creators, paid media, and AI-assisted execution."
+          inverted
+          tone="yellow"
+        />
+      </div>
+      <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="mx-auto grid max-w-[1440px] gap-[var(--gap-card-grid)] md:grid-cols-2 xl:grid-cols-3">
+        {portfolio.expertise.map((group, index) => (
+          <motion.article
+            key={group.title}
+            variants={fadeUp}
+            className={`card ${expertiseCardClasses[index % expertiseCardClasses.length]} p-[var(--card-padding)]`}
+          >
+            <div className="flex items-center justify-between gap-4">
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
+              <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <h3 className="mt-10 text-2xl font-black tracking-[-0.05em]">{group.title}</h3>
             <ul className="mt-6 grid gap-2">
               {group.items.map((item) => (
-                <li key={item} className="theme-chip rounded-full px-4 py-2 text-sm font-semibold">
+                <li key={item} className={`${index % 6 === 1 || index % 6 === 3 ? "tool-tag" : "tool-tag tool-tag-inverted"}`}>
                   {item}
                 </li>
               ))}

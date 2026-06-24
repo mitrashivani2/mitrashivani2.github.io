@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   basePath,
+  experimental: {
+    devtoolSegmentExplorer: false
+  },
   images: {
     unoptimized: true,
     formats: ["image/avif", "image/webp"]

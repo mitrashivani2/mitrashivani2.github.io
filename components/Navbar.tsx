@@ -36,29 +36,29 @@ export function Navbar({ portfolio }: { portfolio: Portfolio }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
         scrolled
-          ? "border-b border-[color:var(--accent-border)] bg-[rgba(237,243,239,0.86)] shadow-[0_18px_44px_rgba(8,15,13,0.12)] backdrop-blur-xl"
+          ? "border-b-[2px] border-[var(--color-white)] bg-[rgba(13,13,13,0.9)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-4 sm:gap-5 sm:px-8 lg:px-12" aria-label="Primary navigation">
         <a
           href="#hero"
-          className="grid h-12 w-12 place-items-center border border-[rgba(255,255,255,0.18)] bg-[image:var(--accent-gradient)] text-sm font-extrabold text-white shadow-[0_10px_22px_rgba(8,15,13,0.2)]"
+          className="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-2xl border-[2px] border-[var(--color-black)] bg-[var(--color-yellow)] text-sm font-black text-[var(--color-black)] shadow-[var(--shadow-card)]"
           aria-label="Go to Shivani Mitra hero section"
         >
           SM
         </a>
-        <div className="hidden items-center gap-1 rounded-full border border-[color:var(--accent-border)] bg-[rgba(250,252,251,0.84)] p-1 text-sm font-semibold text-[var(--text-muted)] shadow-[0_14px_28px_rgba(8,15,13,0.08)] md:flex">
+        <div className="hidden items-center gap-2 rounded-full border-[2px] border-[var(--color-white)] bg-[rgba(13,13,13,0.88)] p-2 text-sm font-bold text-[var(--color-white)] shadow-[var(--shadow-card)] md:flex">
           {links.map((link) => {
             const id = link.href.slice(1);
             return (
               <a
                 key={link.href}
                 href={link.href}
-                className={`rounded-full px-4 py-2 transition ${
+                className={`rounded-full border-[2px] px-4 py-2 transition ${
                   active === id
-                    ? "bg-[image:var(--accent-gradient)] text-white"
-                    : "text-[var(--text-muted)] hover:bg-[rgba(45,105,87,0.1)] hover:text-[var(--foreground)]"
+                    ? "border-[var(--color-black)] bg-[var(--color-lime)] text-[var(--color-black)] shadow-[var(--shadow-card)]"
+                    : "border-transparent bg-transparent text-[var(--color-white)] hover:border-[var(--color-black)] hover:bg-[var(--color-white)] hover:text-[var(--color-black)] hover:shadow-[var(--shadow-card)]"
                 }`}
               >
                 {link.label}
@@ -68,7 +68,7 @@ export function Navbar({ portfolio }: { portfolio: Portfolio }) {
         </div>
         <a
           href={withBasePath(portfolio.personal.resume)}
-          className="premium-button premium-button-dark ml-auto min-h-11 w-auto px-3 py-2 text-sm sm:px-4"
+          className="btn btn-filled-lime ml-auto w-auto px-3 sm:px-4"
           download
           aria-label="Download Shivani Mitra resume"
         >

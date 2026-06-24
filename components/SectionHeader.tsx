@@ -1,12 +1,29 @@
 import type { ReactNode } from "react";
 
-export function Eyebrow({ children, inverted = false }: { children: ReactNode; inverted?: boolean }) {
+const toneClass = {
+  yellow: "neo-badge-yellow",
+  green: "neo-badge-green",
+  orange: "neo-badge-orange",
+  blue: "neo-badge-blue",
+  white: "bg-[var(--color-white)] text-[var(--color-black)]"
+};
+
+export function Eyebrow({
+  children,
+  inverted = false,
+  tone = "yellow",
+  size = "default"
+}: {
+  children: ReactNode;
+  inverted?: boolean;
+  tone?: keyof typeof toneClass;
+  size?: "default" | "section";
+}) {
+  const baseClass = size === "section" ? "section-header-pill" : "section-label";
+  const fillClass = inverted ? "bg-[var(--color-white)] text-[var(--color-black)]" : toneClass[tone];
+
   return (
-    <p
-      className={`text-[0.82rem] font-extrabold uppercase tracking-[0.18em] sm:text-[0.98rem] ${
-        inverted ? "text-[rgba(203,231,219,0.82)]" : "text-[var(--accent)]"
-      }`}
-    >
+    <p className={`${baseClass} ${fillClass}`}>
       {children}
     </p>
   );
@@ -16,30 +33,25 @@ export function SectionHeader({
   eyebrow,
   title,
   intro,
-  inverted = false
+  inverted = false,
+  tone = "yellow"
 }: {
   eyebrow: string;
   title: string;
   intro?: string;
   inverted?: boolean;
+  tone?: keyof typeof toneClass;
 }) {
   return (
-    <div className="mb-12 max-w-[72rem] lg:mb-16">
-      <Eyebrow inverted={inverted}>{eyebrow}</Eyebrow>
-      <div className="mt-4">
-        <h2
-          className={`max-w-5xl font-serif text-[2.95rem] leading-[0.94] sm:text-[3.85rem] lg:text-[4.75rem] ${
-            inverted ? "text-white" : "text-[var(--foreground)]"
-          }`}
-        >
-          {title}
-        </h2>
-        {intro ? (
-          <p className={`mt-4 max-w-3xl text-base leading-7 sm:text-[1.02rem] ${inverted ? "text-white/68" : "text-[var(--text-muted)]"}`}>
-            {intro}
-          </p>
-        ) : null}
-      </div>
+    <div className="mb-12 max-w-[580px] lg:mb-16">
+      <Eyebrow inverted={inverted} tone={tone} size="section">
+        {eyebrow}
+      </Eyebrow>
+      {intro ? (
+        <p className={`section-header-intro mt-5 ${inverted ? "section-header-intro-dark" : "section-header-intro-light"}`}>
+          {intro}
+        </p>
+      ) : null}
     </div>
   );
 }

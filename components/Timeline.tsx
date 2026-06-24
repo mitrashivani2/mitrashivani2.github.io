@@ -11,35 +11,45 @@ export function Timeline({ portfolio }: { portfolio: Portfolio }) {
   const job = portfolio.journey[active];
 
   return (
-    <section id="journey" className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <SectionHeader eyebrow="Career journey" title="A clear progression from communications and recruiting into senior agency account leadership." />
-      <div className="grid gap-5 lg:grid-cols-[0.42fr_1fr]">
-        <div className="grid gap-2">
+    <section id="journey" className="section-frame section-light border-y-[2px] border-[var(--color-black)]">
+      <div className="mx-auto max-w-[1440px]">
+        <SectionHeader
+          eyebrow="Career journey"
+          title="A clear progression from recruiting and communications into senior agency account leadership."
+          intro="Each role expanded the scope of leadership, delivery ownership, and commercial impact across agency and communications environments."
+          tone="orange"
+        />
+      </div>
+      <div className="mx-auto grid max-w-[1440px] gap-5 lg:grid-cols-[0.42fr_1fr]">
+        <div className="grid gap-3">
           {portfolio.journey.map((item, index) => (
             <button
               key={item.company}
               type="button"
               onClick={() => setActive(index)}
-              className={`border p-5 text-left transition ${
+              className={`timeline-item text-left ${
                 active === index
-                  ? "border-transparent bg-[image:var(--accent-gradient)] text-white shadow-[0_18px_44px_rgba(8,15,13,0.16)]"
-                  : "border-[color:var(--accent-border)] bg-[rgba(250,252,251,0.88)] text-[var(--foreground)] hover:border-[var(--accent)]"
+                  ? "bg-[var(--color-lime)] text-[var(--color-black)] hover:bg-[var(--color-lime)]"
+                  : "text-[var(--color-black)]"
               }`}
             >
-              <span className={`text-xs font-bold uppercase tracking-[0.14em] ${active === index ? "text-[rgba(203,231,219,0.78)]" : "text-[var(--accent)]"}`}>
+              <span className={`neo-kicker ${active === index ? "text-[var(--color-black)] opacity-60" : "text-[var(--color-black)] opacity-55"}`}>
                 {item.period}
               </span>
-              <strong className="mt-3 block text-2xl">{item.company}</strong>
+              <strong className="mt-3 block text-2xl font-black tracking-[-0.05em]">{item.company}</strong>
             </button>
           ))}
         </div>
-        <motion.article key={job.company} variants={fadeUp} initial="hidden" animate="visible" className="theme-panel p-6 lg:p-8">
-          <p className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--accent)]">{job.period}</p>
-          <h3 className="mt-3 font-serif text-5xl leading-none text-[var(--foreground)]">{job.company}</h3>
-          <p className="mt-5 text-lg font-semibold text-[var(--text-muted)]">{job.roles.join(" -> ")}</p>
+        <motion.article key={job.company} variants={fadeUp} initial="hidden" animate="visible" className="card theme-panel p-6 lg:p-8">
+          <div className="flex flex-wrap gap-3">
+            <span className="section-label neo-badge-orange">{job.period}</span>
+            <span className="section-label neo-badge-blue">{job.roles.length} roles</span>
+          </div>
+          <h3 className="section-heading mt-6 max-w-none">{job.company}</h3>
+          <p className="mt-4 text-[16px] font-semibold leading-[1.5] text-[rgba(13,13,13,0.62)]">{job.roles.join(" / ")}</p>
           <ul className="mt-8 grid gap-3">
             {job.highlights.map((item) => (
-              <li key={item} className="border-l-4 border-[var(--accent)] bg-[var(--surface-soft)] p-4 text-base leading-7 text-[var(--text-muted)]">
+              <li key={item} className="card-inner card-body-text bg-[rgba(255,255,255,0.35)] font-medium text-[rgba(13,13,13,0.78)]">
                 {item}
               </li>
             ))}

@@ -6,27 +6,20 @@ export const portfolio = {
     title: "Senior Account Manager | Brand Strategy | Digital Marketing | Client Growth",
     positioning:
       "Marketing & Client Growth Leader helping brands scale through content, culture, entertainment, and digital-first campaigns.",
-    hero: "I build brands that people talk about - and numbers that prove it.",
-    supporting:
-      "Senior marketing professional with 7+ years of experience across digital strategy, campaign management, and influencer marketing. I've led campaigns that sold Rs290Cr worth of film tickets, built a 1.7M music community, and cut influencer CPV by 42% through three years of compounding data.",
+    hero: "I build brands that people talk about – and numbers that prove it.",
     email: "mitra.shivani2@gmail.com",
     phone: "+91-7999368670",
     linkedin: "https://www.linkedin.com/in/shivanimitra30/",
     resume: "/Shivani_Mitra_Resume_ATS.pdf",
     resumeDoc: "/Shivani_Mitra_Resume_ATS.docx",
     resumePdf: "/Shivani_Mitra_Resume_ATS.pdf",
-    portrait: "/Professional Profile Picture.PNG"
+    portrait: "/IMG_6355.JPG"
   },
   metrics: [
     {
       value: "7+",
       label: "Years in Digital Marketing",
       detail: "Across agency environments spanning entertainment, OTT, FMCG, fintech, music, and hospitality."
-    },
-    {
-      value: "Rs290Cr",
-      label: "Box Office Driven",
-      detail: "Generated through a social-first film campaign built to sustain theatrical demand."
     },
     {
       value: "1.7M",
@@ -42,11 +35,6 @@ export const portfolio = {
       value: "314M+",
       label: "Impressions on One Campaign",
       detail: "Achieved on a single film launch built around audience sentiment and cultural momentum."
-    },
-    {
-      value: "30+",
-      label: "Brand Campaigns Annually",
-      detail: "Managed at scale with 90% on-time delivery across multi-brand portfolios."
     }
   ] satisfies Metric[],
   about:
@@ -107,6 +95,28 @@ export const portfolio = {
     }
   ] satisfies ExpertiseGroup[],
   caseStudies: [
+    {
+      title: "Glenmark Scalp Influencer Engine",
+      category: "Influencer marketing",
+      brand: "Glenmark Scalp",
+      tone: "finance",
+      objective: "Build a smarter, more efficient influencer system for a pharmaceutical dandruff shampoo over a 3-year account, improving reach and cost efficiency without wasting budget.",
+      audience: "Consumers dealing with dandruff, beauty and lifestyle audiences, dermatologist-trusting shoppers, and FMCG/healthcare content viewers across creator tiers.",
+      challenge:
+        "Scalp sits in a low-interest category on social media, so the challenge was to make the product feel relevant, credible, and efficient within a fixed budget while learning year over year.",
+      strategy:
+        "Run a dual-track creator model for credibility and reach, cut weak creator segments based on data, and evolve the programme through performance-tier analysis rather than instinct-led influencer selection.",
+      execution:
+        "Across three years the programme refined creator mix, introduced new genres, removed nano creators, expanded to 61 creators across 12 genres, and classified performance into overperformers, standard performers, and underperformers.",
+      platforms: ["Instagram", "Influencer platforms", "Campaign reporting", "Annual media planning"],
+      role: "Senior Account Manager with full account ownership for Glenmark Scalp influencer strategy across FY24-25 at White Rivers Media.",
+      teamStructure: "Influencer strategy, creator management, reporting, media planning, and client servicing teams.",
+      learnings:
+        "The 42% CPV improvement came from treating influencer marketing like performance media: benchmark every decision, follow the data, and compound the learning year over year.",
+      metrics:
+        "17.57M views against a 10.4M plan, CPV improved from Rs0.72 planned to Rs0.42 achieved, 61 creators across 12 genres, and 58.7% of all views driven by the top 18 creators.",
+      link: "https://www.whiteriversmedia.com/case-study/scaple"
+    },
     {
       title: "The Kashmir Files Social Campaign",
       category: "Film launch campaign",
@@ -238,28 +248,6 @@ export const portfolio = {
         "11.6M+ reach, 24.1M+ views, 1M+ likes, 1.1M+ engagements, 4.5M+ meme network engagement, and media benchmarks beaten across key placements.",
       link: "https://www.instagram.com/p/CqqHaSxNKSx/"
     },
-    {
-      title: "Glenmark Scaple Influencer Engine",
-      category: "Influencer marketing",
-      brand: "Glenmark Scaple",
-      tone: "finance",
-      objective: "Build a smarter, more efficient influencer system for a pharmaceutical dandruff shampoo over a 3-year account, improving reach and cost efficiency without wasting budget.",
-      audience: "Consumers dealing with dandruff, beauty and lifestyle audiences, dermatologist-trusting shoppers, and FMCG/healthcare content viewers across creator tiers.",
-      challenge:
-        "Scaple sits in a low-interest category on social media, so the challenge was to make the product feel relevant, credible, and efficient within a fixed budget while learning year over year.",
-      strategy:
-        "Run a dual-track creator model for credibility and reach, cut weak creator segments based on data, and evolve the programme through performance-tier analysis rather than instinct-led influencer selection.",
-      execution:
-        "Across three years the programme refined creator mix, introduced new genres, removed nano creators, expanded to 61 creators across 12 genres, and classified performance into overperformers, standard performers, and underperformers.",
-      platforms: ["Instagram", "Influencer platforms", "Campaign reporting", "Annual media planning"],
-      role: "Senior Account Manager with full account ownership for Glenmark Scaple influencer strategy across FY24-25 at White Rivers Media.",
-      teamStructure: "Influencer strategy, creator management, reporting, media planning, and client servicing teams.",
-      learnings:
-        "The 42% CPV improvement came from treating influencer marketing like performance media: benchmark every decision, follow the data, and compound the learning year over year.",
-      metrics:
-        "17.57M views against a 10.4M plan, CPV improved from Rs0.72 planned to Rs0.42 achieved, 61 creators across 12 genres, and 58.7% of all views driven by the top 18 creators.",
-      link: "https://www.whiteriversmedia.com/case-study/scaple"
-    }
   ] satisfies CaseStudy[],
   journey: [
     {
@@ -310,7 +298,7 @@ export const portfolio = {
     Analytics: ["Google Analytics", "Social Insights", "Campaign Reporting"],
     "Social Platforms": ["Instagram", "Facebook", "LinkedIn", "YouTube", "X"],
     "Campaign Management": ["Influencer Platforms", "Paid Media Tools"],
-    "AI Tools": ["ChatGPT", "Claude", "Gemini", "Midjourney", "SunoAI", "Perplexity", "Gamma AI", "Canva AI", "NotebookLM"]
+    "AI Tools": ["ChatGPT", "Claude", "Gemini", "Google AI Studio", "Midjourney", "SunoAI", "Perplexity", "Gamma AI", "Canva AI", "NotebookLM"]
   },
   selectedWork: [
     {
@@ -329,7 +317,7 @@ export const portfolio = {
       href: "https://drive.google.com/file/d/1NFri9kWd5XA6Ao8_gWRbT-MCjYRrHQZZ/view?usp=drive_link"
     },
     {
-      title: "Glenmark Scaple Programme",
+      title: "Glenmark Scalp Programme",
       type: "Influencer strategy",
       href: "https://www.whiteriversmedia.com/case-study/scaple"
     },

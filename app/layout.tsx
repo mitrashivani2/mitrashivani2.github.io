@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Bodoni_Moda, Space_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { absoluteAsset, siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const sans = Space_Grotesk({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap"
-});
-
-const serif = Bodoni_Moda({
-  subsets: ["latin"],
-  variable: "--font-serif",
   display: "swap"
 });
 
@@ -52,7 +46,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={jakarta.variable}>
       <body>{children}</body>
     </html>
   );
