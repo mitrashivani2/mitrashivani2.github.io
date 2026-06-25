@@ -17,13 +17,13 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
           intro="From streaming platforms and studios to music, FMCG, finance, and hospitality, this roster reflects the range of brands I have helped grow."
           tone="blue"
         />
-        <div className="neo-grid-frame overflow-hidden border-[3px] p-[6px]">
+        <div className="neo-grid-frame overflow-hidden">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid gap-[6px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
+            className="grid gap-px bg-[var(--border-light)] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
           >
             {portfolio.brands.map((brand) => (
               <motion.div key={brand.name} variants={fadeUp} className="logo-cell group px-4 text-center">
@@ -34,10 +34,10 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
                     width={170}
                     height={76}
                     sizes="170px"
-                    className="max-h-10 w-auto max-w-[80%] object-contain grayscale transition duration-300 group-hover:grayscale-0"
+                    className="max-h-10 w-auto max-w-[80%] object-contain"
                   />
                 ) : (
-                  <span className="text-[14px] font-semibold text-[var(--color-black)]">{brand.name}</span>
+                  <span className="text-[13px] font-semibold text-[var(--text-primary)]">{brand.name}</span>
                 )}
               </motion.div>
             ))}

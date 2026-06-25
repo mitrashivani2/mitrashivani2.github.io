@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     description:
       "Senior Account Manager with 7+ years driving brand growth across entertainment, OTT, fintech, FMCG, and integrated digital campaigns.",
     type: "website",
-    images: [absoluteAsset("/Professional Profile Picture.PNG")]
+    images: [absoluteAsset("/IMG_6355.JPG")]
   },
   twitter: {
     card: "summary_large_image",
     title: "Shivani Mitra | Senior Account Manager & Marketing Strategist",
     description:
       "Senior Account Manager with 7+ years driving brand growth across entertainment, OTT, fintech, FMCG, and integrated digital campaigns.",
-    images: [absoluteAsset("/Professional Profile Picture.PNG")]
+    images: [absoluteAsset("/IMG_6355.JPG")]
   }
 };
 

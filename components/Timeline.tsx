@@ -11,7 +11,7 @@ export function Timeline({ portfolio }: { portfolio: Portfolio }) {
   const job = portfolio.journey[active];
 
   return (
-    <section id="journey" className="section-frame section-light border-y-[2px] border-[var(--color-black)]">
+    <section id="journey" className="section-frame section-light">
       <div className="mx-auto max-w-[1440px]">
         <SectionHeader
           eyebrow="Career journey"
@@ -29,27 +29,27 @@ export function Timeline({ portfolio }: { portfolio: Portfolio }) {
               onClick={() => setActive(index)}
               className={`timeline-item text-left ${
                 active === index
-                  ? "bg-[var(--color-lime)] text-[var(--color-black)] hover:bg-[var(--color-lime)]"
-                  : "text-[var(--color-black)]"
+                  ? "border-[var(--bg-dark)] bg-[var(--bg-dark)] text-[var(--text-on-dark)] hover:bg-[var(--bg-dark)]"
+                  : "text-[var(--text-primary)]"
               }`}
             >
-              <span className={`neo-kicker ${active === index ? "text-[var(--color-black)] opacity-60" : "text-[var(--color-black)] opacity-55"}`}>
+              <span className={`neo-kicker ${active === index ? "text-[rgba(245,245,243,0.5)]" : "text-[var(--text-muted)]"}`}>
                 {item.period}
               </span>
               <strong className="mt-3 block text-2xl font-black tracking-[-0.05em]">{item.company}</strong>
             </button>
           ))}
         </div>
-        <motion.article key={job.company} variants={fadeUp} initial="hidden" animate="visible" className="card theme-panel p-6 lg:p-8">
+        <motion.article key={job.company} variants={fadeUp} initial="hidden" animate="visible" className="card p-6 lg:p-8">
           <div className="flex flex-wrap gap-3">
-            <span className="section-label neo-badge-orange">{job.period}</span>
-            <span className="section-label neo-badge-blue">{job.roles.length} roles</span>
+            <span className="section-label">{job.period}</span>
+            <span className="section-label">{job.roles.length} roles</span>
           </div>
-          <h3 className="section-heading mt-6 max-w-none">{job.company}</h3>
-          <p className="mt-4 text-[16px] font-semibold leading-[1.5] text-[rgba(13,13,13,0.62)]">{job.roles.join(" / ")}</p>
+          <h3 className="mt-6 text-[32px] font-extrabold tracking-[-0.05em] text-[var(--text-primary)]">{job.company}</h3>
+          <p className="mt-4 text-[14px] font-medium leading-[1.6] text-[var(--text-secondary)]">{job.roles.join(" / ")}</p>
           <ul className="mt-8 grid gap-3">
             {job.highlights.map((item) => (
-              <li key={item} className="card-inner card-body-text bg-[rgba(255,255,255,0.35)] font-medium text-[rgba(13,13,13,0.78)]">
+              <li key={item} className="card-inner card-body-text text-[var(--text-primary)]">
                 {item}
               </li>
             ))}

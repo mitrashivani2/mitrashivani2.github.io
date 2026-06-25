@@ -34,31 +34,29 @@ export function Navbar({ portfolio }: { portfolio: Portfolio }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
-        scrolled
-          ? "border-b-[2px] border-[var(--color-white)] bg-[rgba(13,13,13,0.9)] backdrop-blur-xl"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b border-[var(--border-light)] bg-[var(--bg-page)] transition duration-300 ${
+        scrolled ? "shadow-[0_1px_6px_rgba(0,0,0,0.04)]" : ""
       }`}
     >
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-4 sm:gap-5 sm:px-8 lg:px-12" aria-label="Primary navigation">
         <a
           href="#hero"
-          className="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-2xl border-[2px] border-[var(--color-black)] bg-[var(--color-yellow)] text-sm font-black text-[var(--color-black)] shadow-[var(--shadow-card)]"
+          className="grid h-9 w-9 place-items-center rounded-full bg-[var(--bg-dark)] text-sm font-black text-[var(--text-on-dark)]"
           aria-label="Go to Shivani Mitra hero section"
         >
           SM
         </a>
-        <div className="hidden items-center gap-2 rounded-full border-[2px] border-[var(--color-white)] bg-[rgba(13,13,13,0.88)] p-2 text-sm font-bold text-[var(--color-white)] shadow-[var(--shadow-card)] md:flex">
+        <div className="hidden items-center gap-5 rounded-[var(--radius-pill)] border-[var(--border-width)] border-[var(--border-color)] bg-transparent px-5 py-2 md:flex">
           {links.map((link) => {
             const id = link.href.slice(1);
             return (
               <a
                 key={link.href}
                 href={link.href}
-                className={`rounded-full border-[2px] px-4 py-2 transition ${
+                className={`text-[13px] font-medium text-[var(--text-primary)] transition ${
                   active === id
-                    ? "border-[var(--color-black)] bg-[var(--color-lime)] text-[var(--color-black)] shadow-[var(--shadow-card)]"
-                    : "border-transparent bg-transparent text-[var(--color-white)] hover:border-[var(--color-black)] hover:bg-[var(--color-white)] hover:text-[var(--color-black)] hover:shadow-[var(--shadow-card)]"
+                    ? "underline underline-offset-4"
+                    : "hover:underline hover:underline-offset-4"
                 }`}
               >
                 {link.label}
@@ -68,7 +66,7 @@ export function Navbar({ portfolio }: { portfolio: Portfolio }) {
         </div>
         <a
           href={withBasePath(portfolio.personal.resume)}
-          className="btn btn-filled-lime ml-auto w-auto px-3 sm:px-4"
+          className="btn btn-filled-lime ml-auto w-auto px-5 py-2 text-[13px]"
           download
           aria-label="Download Shivani Mitra resume"
         >

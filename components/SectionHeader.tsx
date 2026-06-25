@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
 const toneClass = {
-  yellow: "neo-badge-yellow",
-  green: "neo-badge-green",
-  orange: "neo-badge-orange",
-  blue: "neo-badge-blue",
-  white: "bg-[var(--color-white)] text-[var(--color-black)]"
+  yellow: "",
+  green: "",
+  orange: "",
+  blue: "",
+  white: ""
 };
 
 export function Eyebrow({
@@ -20,7 +20,7 @@ export function Eyebrow({
   size?: "default" | "section";
 }) {
   const baseClass = size === "section" ? "section-header-pill" : "section-label";
-  const fillClass = inverted ? "bg-[var(--color-white)] text-[var(--color-black)]" : toneClass[tone];
+  const fillClass = inverted ? "border-[rgba(245,245,243,0.4)] text-[rgba(245,245,243,0.7)]" : toneClass[tone];
 
   return (
     <p className={`${baseClass} ${fillClass}`}>
@@ -43,12 +43,12 @@ export function SectionHeader({
   tone?: keyof typeof toneClass;
 }) {
   return (
-    <div className="mb-12 max-w-[580px] lg:mb-16">
+    <div className="mb-10 max-w-[580px] lg:mb-14">
       <Eyebrow inverted={inverted} tone={tone} size="section">
         {eyebrow}
       </Eyebrow>
       {intro ? (
-        <p className={`section-header-intro mt-5 ${inverted ? "section-header-intro-dark" : "section-header-intro-light"}`}>
+        <p className={`section-header-intro mt-4 ${inverted ? "section-header-intro-dark" : "section-header-intro-light"}`}>
           {intro}
         </p>
       ) : null}
