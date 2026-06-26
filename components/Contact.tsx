@@ -14,7 +14,7 @@ export function Contact({ portfolio }: { portfolio: Portfolio }) {
   return (
     <section id="contact" className="section-frame section-dark bg-[var(--bg-dark)] text-[var(--text-on-dark)]">
       <div className="mx-auto max-w-[1440px]">
-        <Eyebrow inverted tone="white">Contact</Eyebrow>
+        <Eyebrow inverted tone="white" size="section">Contact</Eyebrow>
         <div className="mt-4 rounded-[var(--radius-sharp)] border-[var(--border-width)] border-[var(--text-on-dark)] bg-[var(--bg-page)] p-6 text-[var(--text-primary)] lg:p-8">
           <h2 className="mt-0 max-w-[11ch] text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.05] tracking-[-0.05em] text-[var(--text-primary)]">
             Let&apos;s build marketing work that lands in culture and in the numbers.

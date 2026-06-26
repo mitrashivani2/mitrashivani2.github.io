@@ -134,7 +134,24 @@ button {
   color: var(--text-on-dark-secondary);
 }
 
-.section-header-pill,
+.section-header-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: var(--border-width) solid var(--border-color);
+  background: transparent;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
 .section-label,
 .neo-badge,
 .hero-pill {
@@ -155,10 +172,12 @@ button {
 }
 
 .section-header-intro {
-  max-width: 480px;
-  font-size: var(--text-subtext);
+  max-width: 520px;
+  margin-top: 0;
+  margin-bottom: 48px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .section-header-intro-light {
@@ -360,9 +379,10 @@ button {
 
 .logo-cell {
   display: flex;
-  height: 96px;
+  height: 100px;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sharp);
   background: var(--bg-card);
@@ -373,8 +393,13 @@ button {
 }
 
 .logo-cell img {
+  max-height: 52px;
+  max-width: 75%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.75;
   transition: filter 0.2s ease, opacity 0.2s ease;
 }
 

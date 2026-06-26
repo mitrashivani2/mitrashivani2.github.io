@@ -45,6 +45,7 @@ export const portfolio = {
     "I work at the intersection of strategy, creativity, and performance - and I know which one to lead with depending on the brief."
   ],
   brands: [
+    { name: "Jio", logo: "/Brand Logos/JIO (1).png" },
     { name: "JioHotstar", logo: "/Brand Logos/JioHotstar.jpg" },
     { name: "Netflix India" },
     { name: "Amazon Prime Video" },
@@ -57,14 +58,19 @@ export const portfolio = {
     { name: "HYBE India" },
     { name: "Saregama", logo: "/Brand Logos/saregama.jpg" },
     { name: "Tips Films", logo: "/Brand Logos/Tips.jpg" },
+    { name: "Voot Select", logo: "/Brand Logos/Voot Slect.png" },
     { name: "Hershey's India", logo: "/Brand Logos/Hersheys.jpg" },
     { name: "Glenmark Pharmaceuticals", logo: "/Brand Logos/Glenmark.png" },
+    { name: "Poonawalla Fincorp", logo: "/Brand Logos/Poonawalla Fincorp.jpg" },
     { name: "Tata Wiron", logo: "/Brand Logos/Tata Wiron.png" },
+    { name: "Tata Dhaanya", logo: "/Brand Logos/Tata Dhaanya.jpg" },
     { name: "Asian Paints", logo: "/Brand Logos/Asian Paints.png" },
     { name: "JSW Ventures", logo: "/Brand Logos/JSW Ventures.jpg" },
     { name: "Holiday Inn", logo: "/Brand Logos/IHG hotels.png" },
+    { name: "Hyatt Pune", logo: "/Brand Logos/Hyatt Pune.jpg" },
     { name: "Sheraton Grand", logo: "/Brand Logos/Sheraton.png" },
     { name: "DoubleTree by Hilton", logo: "/Brand Logos/Hilton.png" },
+    { name: "Messe Munchen India", logo: "/Brand Logos/Messe Munchen India.png" },
     { name: "Rallis India", logo: "/Brand Logos/Tata Rallis.jpg" },
     { name: "Cube Highways", logo: "/Brand Logos/Cube Highways.png" }
   ] satisfies Brand[],

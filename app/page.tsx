@@ -1,4 +1,3 @@
-import { About } from "@/components/About";
 import { BrandWall } from "@/components/BrandWall";
 import { CaseStudies } from "@/components/CaseStudies";
 import { Contact } from "@/components/Contact";
@@ -6,9 +5,7 @@ import { Expertise } from "@/components/Expertise";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { ImpactStats } from "@/components/ImpactStats";
-import { Leadership } from "@/components/Leadership";
 import { Navbar } from "@/components/Navbar";
-import { Resume } from "@/components/Resume";
 import { Timeline } from "@/components/Timeline";
 import { Tools } from "@/components/Tools";
 import { portfolio } from "@/data/portfolio";
@@ -47,14 +44,11 @@ export default function Home() {
       <main id="content" className="bg-transparent text-[var(--text-primary)]">
         <Hero portfolio={portfolio} />
         <ImpactStats portfolio={portfolio} />
-        <About portfolio={portfolio} />
         <BrandWall portfolio={portfolio} />
         <Expertise portfolio={portfolio} />
         <CaseStudies portfolio={portfolio} />
         <Timeline portfolio={portfolio} />
-        <Leadership portfolio={portfolio} />
         <Tools portfolio={portfolio} />
-        <Resume portfolio={portfolio} />
         <Contact portfolio={portfolio} />
       </main>
       <Footer portfolio={portfolio} />

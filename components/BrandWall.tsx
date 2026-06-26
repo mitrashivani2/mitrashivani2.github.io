@@ -26,7 +26,7 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
             className="grid gap-px bg-[var(--border-light)] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
           >
             {portfolio.brands.map((brand) => (
-              <motion.div key={brand.name} variants={fadeUp} className="logo-cell group px-4 text-center">
+              <motion.div key={brand.name} variants={fadeUp} className="logo-cell group text-center">
                 {brand.logo ? (
                   <Image
                     src={withBasePath(brand.logo)}
@@ -34,16 +34,15 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
                     width={170}
                     height={76}
                     sizes="170px"
-                    className="max-h-10 w-auto max-w-[80%] object-contain"
+                    className="w-auto object-contain"
                   />
                 ) : (
-                  <span className="text-[13px] font-semibold text-[var(--text-primary)]">{brand.name}</span>
+                  <span className="text-[15px] font-semibold text-[var(--text-primary)] opacity-75">{brand.name}</span>
                 )}
               </motion.div>
             ))}
           </motion.div>
         </div>
-        <p className="section-intro section-intro-light mt-5 max-w-none">Logos shown for portfolio context only.</p>
       </div>
     </section>
   );

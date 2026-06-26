@@ -31,7 +31,7 @@ export function Eyebrow({
 
 export function SectionHeader({
   eyebrow,
-  title,
+  title: _title,
   intro,
   inverted = false,
   tone = "yellow"
@@ -43,12 +43,12 @@ export function SectionHeader({
   tone?: keyof typeof toneClass;
 }) {
   return (
-    <div className="mb-10 max-w-[580px] lg:mb-14">
+    <div className="max-w-[520px]">
       <Eyebrow inverted={inverted} tone={tone} size="section">
         {eyebrow}
       </Eyebrow>
       {intro ? (
-        <p className={`section-header-intro mt-4 ${inverted ? "section-header-intro-dark" : "section-header-intro-light"}`}>
+        <p className={`section-header-intro ${inverted ? "section-header-intro-dark" : "section-header-intro-light"}`}>
           {intro}
         </p>
       ) : null}
