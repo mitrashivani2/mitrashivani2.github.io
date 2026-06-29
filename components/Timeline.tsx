@@ -4,57 +4,91 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/animations";
 import type { Portfolio } from "@/data/portfolio";
-import { SectionHeader } from "./SectionHeader";
+import { SectionPill } from "./SectionHeader";
+
+function formatPeriod(period: string) {
+  return period.replace(" - ", " — ").toUpperCase();
+}
 
 export function Timeline({ portfolio }: { portfolio: Portfolio }) {
   const [active, setActive] = useState(0);
   const job = portfolio.journey[active];
 
   return (
-    <section id="journey" className="section-frame section-light">
-      <div className="mx-auto max-w-[1440px]">
-        <SectionHeader
-          eyebrow="Career journey"
-          title="A clear progression from recruiting and communications into senior agency account leadership."
-          intro="Each role expanded the scope of leadership, delivery ownership, and commercial impact across agency and communications environments."
-          tone="orange"
-        />
-      </div>
-      <div className="mx-auto grid max-w-[1440px] gap-5 lg:grid-cols-[0.42fr_1fr]">
-        <div className="grid gap-3">
-          {portfolio.journey.map((item, index) => (
-            <button
-              key={item.company}
-              type="button"
-              onClick={() => setActive(index)}
-              className={`timeline-item text-left ${
-                active === index
-                  ? "border-[var(--bg-dark)] bg-[var(--bg-dark)] text-[var(--text-on-dark)] hover:bg-[var(--bg-dark)]"
-                  : "text-[var(--text-primary)]"
-              }`}
-            >
-              <span className={`neo-kicker ${active === index ? "text-[rgba(245,245,243,0.5)]" : "text-[var(--text-muted)]"}`}>
-                {item.period}
-              </span>
-              <strong className="mt-3 block text-2xl font-black tracking-[-0.05em]">{item.company}</strong>
-            </button>
-          ))}
+    <section id="journey" className="page-section page-section-dark">
+      <div className="page-inner">
+        <div className="mb-14">
+          <SectionPill dark>CAREER JOURNEY</SectionPill>
+          <h2 className="display-heading-mid display-heading-mid-dark max-w-[680px]">
+            EACH ROLE EXPANDED THE SCOPE OF LEADERSHIP AND IMPACT.
+          </h2>
         </div>
-        <motion.article key={job.company} variants={fadeUp} initial="hidden" animate="visible" className="card p-6 lg:p-8">
-          <div className="flex flex-wrap gap-3">
-            <span className="section-label">{job.period}</span>
-            <span className="section-label">{job.roles.length} roles</span>
+
+        <div className="grid gap-6 lg:grid-cols-[360px_1fr] lg:items-start">
+          <div className="flex flex-col gap-1">
+            {portfolio.journey.map((item, index) => {
+              const selected = active === index;
+              return (
+                <button
+                  key={item.company}
+                  type="button"
+                  aria-selected={selected}
+                  onClick={() => setActive(index)}
+                  className={`w-full border-[var(--border-width)] px-6 py-5 text-left transition ${
+                    selected
+                      ? "border-[var(--color-amber)] border-l-[4px] bg-[rgba(232,168,56,0.08)]"
+                      : "border-[var(--color-border-dark)] bg-transparent"
+                  }`}
+                >
+                  <span
+                    className={`block text-[11px] font-bold tracking-[0.1em] uppercase ${
+                      selected ? "text-[rgba(248,244,255,0.6)]" : "text-[rgba(248,244,255,0.4)]"
+                    }`}
+                  >
+                    {formatPeriod(item.period)}
+                  </span>
+                  <strong
+                    className={`mt-2 block text-[22px] font-black tracking-[-0.03em] uppercase ${
+                      selected ? "text-[var(--color-text-on-dark)]" : "text-[rgba(248,244,255,0.5)]"
+                    }`}
+                  >
+                    {item.company}
+                  </strong>
+                </button>
+              );
+            })}
           </div>
-          <h3 className="mt-6 text-[32px] font-extrabold tracking-[-0.05em] text-[var(--text-primary)]">{job.company}</h3>
-          <p className="mt-4 text-[14px] font-medium leading-[1.6] text-[var(--text-secondary)]">{job.roles.join(" / ")}</p>
-          <ul className="mt-8 grid gap-3">
-            {job.highlights.map((item) => (
-              <li key={item} className="card-inner card-body-text text-[var(--text-primary)]">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </motion.article>
+
+          <motion.article
+            key={job.company}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="border-[var(--border-width)] border-[var(--color-border)] bg-[var(--color-bg-card)] px-8 py-9"
+          >
+            <div className="mb-5 flex flex-wrap gap-2">
+              <span className="tag tag-amber">{formatPeriod(job.period)}</span>
+              <span className="tag">{`${job.roles.length} ROLE${job.roles.length > 1 ? "S" : ""}`}</span>
+            </div>
+            <h3 className="text-[clamp(28px,3vw,40px)] font-black leading-none tracking-[-0.04em] text-[var(--color-text-primary)] uppercase">
+              {job.company}
+            </h3>
+            <p className="mt-2 text-[14px] font-semibold tracking-[0.02em] text-[var(--color-text-muted)]">
+              {job.roles.join(" / ")}
+            </p>
+            <div className="my-7 h-[2px] bg-[var(--color-border)]" aria-hidden="true" />
+            <ul className="flex flex-col gap-3">
+              {job.highlights.map((item) => (
+                <li
+                  key={item}
+                  className="border border-[var(--color-border)] border-l-[3px] border-l-[var(--color-accent)] bg-[var(--color-bg-card-alt)] px-4 py-3 text-[14px] leading-[1.6] text-[var(--color-text-primary)]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.article>
+        </div>
       </div>
     </section>
   );

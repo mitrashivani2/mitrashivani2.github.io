@@ -36,12 +36,12 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <a
         href="#content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-[var(--bg-dark)] focus:px-4 focus:py-3 focus:text-[var(--text-on-dark)]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:bg-[var(--color-bg-dark)] focus:px-4 focus:py-3 focus:text-[var(--color-text-on-dark)]"
       >
         Skip to content
       </a>
       <Navbar portfolio={portfolio} />
-      <main id="content" className="bg-transparent text-[var(--text-primary)]">
+      <main id="content" className="bg-transparent text-[var(--color-text-primary)]">
         <Hero portfolio={portfolio} />
         <ImpactStats portfolio={portfolio} />
         <BrandWall portfolio={portfolio} />

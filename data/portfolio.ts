@@ -60,7 +60,7 @@ export const portfolio = {
     { name: "Tips Films", logo: "/Brand Logos/Tips.jpg" },
     { name: "Voot Select", logo: "/Brand Logos/Voot Slect.png" },
     { name: "Hershey's India", logo: "/Brand Logos/Hersheys.jpg" },
-    { name: "Glenmark Pharmaceuticals", logo: "/Brand Logos/Glenmark.png" },
+    { name: "Glenmark", logo: "/Brand Logos/Glenmark.png" },
     { name: "Poonawalla Fincorp", logo: "/Brand Logos/Poonawalla Fincorp.jpg" },
     { name: "Tata Wiron", logo: "/Brand Logos/Tata Wiron.png" },
     { name: "Tata Dhaanya", logo: "/Brand Logos/Tata Dhaanya.jpg" },

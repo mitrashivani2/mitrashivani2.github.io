@@ -2,10 +2,14 @@ import type { Portfolio } from "@/data/portfolio";
 
 export function Footer({ portfolio }: { portfolio: Portfolio }) {
   return (
-    <footer className="border-t border-[#333] bg-[var(--bg-dark)] px-5 py-8 text-[var(--text-on-dark)] sm:px-8 lg:px-12">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
-        <p className="section-intro section-intro-dark max-w-none font-semibold">© 2026 {portfolio.personal.name}. Senior Account Manager & Marketing Strategist.</p>
-        <p className="font-semibold uppercase tracking-[0.08em] text-[rgba(245,245,243,0.55)]">{portfolio.personal.title}</p>
+    <footer className="border-t-[var(--border-width)] border-[var(--color-border-dark)] bg-[var(--color-bg-dark)] px-5 py-5 md:px-8 xl:px-12">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-2 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <p className="text-[11px] font-semibold tracking-[0.08em] text-[rgba(248,244,255,0.35)] uppercase">
+          © 2026 {portfolio.personal.name.toUpperCase()}. ALL RIGHTS RESERVED.
+        </p>
+        <p className="text-[11px] font-semibold tracking-[0.08em] text-[rgba(248,244,255,0.35)] uppercase">
+          BUILT FOR CULTURE. DRIVEN BY NUMBERS.
+        </p>
       </div>
     </footer>
   );

@@ -1,79 +1,102 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import type { Portfolio } from "@/data/portfolio";
-import { withBasePath } from "@/lib/site";
 
 const links = [
+  { href: "#work", label: "Work" },
   { href: "#impact", label: "Impact" },
   { href: "#brands", label: "Brands" },
-  { href: "#work", label: "Work" },
   { href: "#journey", label: "Journey" },
   { href: "#contact", label: "Contact" }
 ];
 
-export function Navbar({ portfolio }: { portfolio: Portfolio }) {
-  const [scrolled, setScrolled] = useState(false);
+export function Navbar({ portfolio: _portfolio }: { portfolio: Portfolio }) {
   const [active, setActive] = useState("hero");
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      const ids = ["hero", "impact", "brands", "work", "journey", "contact"];
+      const ids = ["work", "impact", "brands", "journey", "contact"];
       const current = ids.findLast((id) => {
         const element = document.getElementById(id);
         return element ? element.getBoundingClientRect().top <= 120 : false;
       });
-      if (current) setActive(current);
+      setActive(current ?? "hero");
     };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [drawerOpen]);
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-[var(--border-light)] bg-[var(--bg-page)] transition duration-300 ${
-        scrolled ? "shadow-[0_1px_6px_rgba(0,0,0,0.04)]" : ""
-      }`}
-    >
-      <nav className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-4 sm:gap-5 sm:px-8 lg:px-12" aria-label="Primary navigation">
-        <a
-          href="#hero"
-          className="grid h-9 w-9 place-items-center rounded-full bg-[var(--bg-dark)] text-sm font-black text-[var(--text-on-dark)]"
-          aria-label="Go to Shivani Mitra hero section"
+    <>
+      <header className="fixed inset-x-0 top-0 z-[100] border-b-[var(--border-width)] border-[var(--color-border)] bg-[var(--color-bg-card)]">
+        <nav
+          className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:px-8 xl:px-12"
+          aria-label="Primary navigation"
         >
-          SM
-        </a>
-        <div className="hidden items-center gap-5 rounded-[var(--radius-pill)] border-[var(--border-width)] border-[var(--border-color)] bg-transparent px-5 py-2 md:flex">
-          {links.map((link) => {
-            const id = link.href.slice(1);
-            return (
+          <a href="#hero" className="flex items-center gap-3" aria-label="Go to Shivani Mitra hero section">
+            <span className="text-[18px] font-black tracking-[0.06em] text-[var(--color-accent)]">SM</span>
+            <span className="h-5 w-px bg-[var(--color-border)]" aria-hidden="true" />
+            <span className="text-[12px] font-bold tracking-[0.1em] text-[var(--color-text-primary)]">
+              SHIVANI MITRA
+            </span>
+          </a>
+          <div className="hidden items-center md:flex">
+            {links.map((link) => {
+              const id = link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`ml-8 border-b-[2px] pb-0.5 text-[12px] font-bold tracking-[0.1em] uppercase transition ${
+                    active === id
+                      ? "border-[var(--color-amber)] text-[var(--color-accent)]"
+                      : "border-transparent text-[var(--color-text-secondary)] hover:border-[var(--color-amber)] hover:text-[var(--color-accent)]"
+                  }`}
+                >
+                  {link.label.toUpperCase()}
+                </a>
+              );
+            })}
+          </div>
+          <button
+            type="button"
+            className="grid h-10 w-10 place-items-center text-[var(--color-accent)] md:hidden"
+            aria-expanded={drawerOpen}
+            aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setDrawerOpen((open) => !open)}
+          >
+            {drawerOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+          </button>
+        </nav>
+      </header>
+      {drawerOpen ? (
+        <div className="fixed inset-x-0 bottom-0 top-16 z-[90] bg-[var(--color-bg-dark)] px-8 py-8 md:hidden">
+          <div className="flex flex-col">
+            {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-medium text-[var(--text-primary)] transition ${
-                  active === id
-                    ? "underline underline-offset-4"
-                    : "hover:underline hover:underline-offset-4"
-                }`}
+                className="border-b-[var(--border-width)] border-[rgba(248,244,255,0.12)] py-6 text-[20px] font-black tracking-[-0.02em] text-[var(--color-text-on-dark)]"
+                onClick={() => setDrawerOpen(false)}
               >
-                {link.label}
+                {link.label.toUpperCase()}
               </a>
-            );
-          })}
+            ))}
+          </div>
         </div>
-        <a
-          href={withBasePath(portfolio.personal.resume)}
-          className="btn btn-filled-lime ml-auto w-auto px-5 py-2 text-[13px]"
-          download
-          aria-label="Download Shivani Mitra resume"
-        >
-          <Download className="h-4 w-4" aria-hidden="true" />
-          <span className="hidden sm:inline">Resume</span>
-        </a>
-      </nav>
-    </header>
+      ) : null}
+    </>
   );
 }
