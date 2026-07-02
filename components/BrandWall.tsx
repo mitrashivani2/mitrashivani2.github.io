@@ -33,14 +33,16 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
                 className="group flex min-h-[88px] items-center justify-center bg-[var(--color-bg-card)] px-5 py-6 text-center transition-colors duration-200 hover:bg-[var(--color-accent-tint)]"
               >
                 {brand.logo ? (
-                  <Image
-                    src={withBasePath(brand.logo)}
-                    alt={`${brand.name} logo`}
-                    width={170}
-                    height={76}
-                    sizes="170px"
-                    className="max-h-[44px] max-w-[120px] object-contain opacity-55 grayscale transition duration-200 group-hover:opacity-100 group-hover:grayscale-0"
-                  />
+                  <div className="flex h-[44px] w-[120px] items-center justify-center">
+                    <Image
+                      src={withBasePath(brand.logo)}
+                      alt={`${brand.name} logo`}
+                      width={170}
+                      height={76}
+                      sizes="120px"
+                      className="h-auto w-auto max-h-full max-w-full object-contain opacity-55 grayscale transition duration-200 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </div>
                 ) : (
                   <span className="text-[13px] font-bold tracking-[0.04em] text-[var(--color-text-secondary)] opacity-70 transition duration-200 group-hover:text-[var(--color-accent)] group-hover:opacity-100">
                     {brand.name}

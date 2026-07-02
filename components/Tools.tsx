@@ -14,7 +14,7 @@ export function Tools({ portfolio }: { portfolio: Portfolio }) {
             <SectionPill>MARKETING TOOLS</SectionPill>
             <h2 className="display-heading-mid">PLATFORMS I RELY ON TO DELIVER.</h2>
           </div>
-          <p className="section-copy pt-2">
+          <p className="section-copy pt-0 lg:pt-10">
             These are the platforms I rely on for campaign reporting, social execution, creator
             coordination, and faster AI-assisted workflows.
           </p>

@@ -3,17 +3,47 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
+import Image, { type StaticImageData } from "next/image";
 import { fadeUp, modalOverlay, modalPanel, staggerContainer } from "@/lib/animations";
 import type { Portfolio } from "@/data/portfolio";
 import type { CaseStudy } from "@/types/portfolio";
 import { SectionPill } from "./SectionHeader";
 
+import apharanImage from "../case study images /Apharan 2 (2).png";
+import bhediyaImage from "../case study images /Bhediya.png";
+import kashmirFilesImage from "../case study images /Kashmir Files.png";
+import loveHostelImage from "../case study images /Love Hostel.png";
+import scalpImage from "../case study images /Scalp.png";
+import sonyMusicImage from "../case study images /Sony Music India.png";
+import zwigatoImage from "../case study images /Zwigato.png";
+
+const studyImages: Record<string, StaticImageData> = {
+  "Glenmark Scalp Influencer Engine": scalpImage,
+  "The Kashmir Files Social Campaign": kashmirFilesImage,
+  "Sony Music India Organic Growth": sonyMusicImage,
+  "Apharan 2 OTT Launch": apharanImage,
+  "Bhediya Integrated Launch": bhediyaImage,
+  "LoveHostel OTT Launch": loveHostelImage,
+  "Zwigato Integrated Campaign": zwigatoImage
+};
+
 function WorkCardVisual({ study, index }: { study: CaseStudy; index: number }) {
   const background = index % 2 === 0 ? "bg-[var(--color-accent-tint)]" : "bg-[var(--color-amber-tint)]";
+  const overlay = index % 2 === 0 ? "var(--color-accent-tint)" : "var(--color-amber-tint)";
   const cardNumber = String(index + 1).padStart(2, "0");
+  const studyImage = studyImages[study.title];
 
   return (
     <div className={`relative min-h-[220px] overflow-hidden px-5 pt-5 ${background}`}>
+      <Image
+        src={studyImage}
+        alt={`${study.brand} campaign visual`}
+        fill
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ opacity: 0.35 }}
+      />
+      <div className="absolute inset-0" style={{ background: overlay, opacity: 0.55 }} />
       <span className="absolute left-5 top-5 text-[11px] font-bold tracking-[0.1em] text-[var(--color-accent)] uppercase">
         {study.category}
       </span>
@@ -144,7 +174,7 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
             <SectionPill>SELECTED WORK</SectionPill>
             <h2 className="display-heading-mid">CAMPAIGNS THAT MOVED CULTURE AND THE NUMBERS.</h2>
           </div>
-          <p className="section-copy pt-2">
+          <p className="section-copy pt-0 lg:pt-10">
             These case studies show how audience insight, cultural timing, and disciplined execution
             came together across launches, OTT, film, and influencer campaigns.
           </p>
@@ -162,7 +192,7 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
               key={study.title}
               variants={fadeUp}
               className={`overflow-hidden border-[var(--border-width)] border-[var(--color-border)] transition-colors duration-200 hover:border-[var(--color-accent)] ${
-                index === portfolio.caseStudies.length - 1 ? "lg:col-span-2 lg:max-w-[680px]" : ""
+                index === portfolio.caseStudies.length - 1 ? "lg:col-span-2" : ""
               }`}
             >
               <WorkCardVisual study={study} index={index} />

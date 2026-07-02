@@ -14,7 +14,7 @@ export function Expertise({ portfolio }: { portfolio: Portfolio }) {
             <SectionPill>CORE EXPERTISE</SectionPill>
             <h2 className="display-heading-mid">WHAT I BRING TO EVERY BRIEF.</h2>
           </div>
-          <p className="section-copy pt-2">
+          <p className="section-copy pt-0 lg:pt-10">
             These are the capabilities I bring into every brief, spanning strategy, content, creators,
             paid media, and AI-assisted execution.
           </p>
