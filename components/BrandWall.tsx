@@ -13,7 +13,7 @@ export function BrandWall({ portfolio }: { portfolio: Portfolio }) {
   return (
     <section id="brands" className="page-section bg-[var(--color-bg-page)]">
       <div className="page-inner">
-        <div className="mb-12 max-w-[560px]">
+        <div className="mb-12">
           <SectionPill>BRANDS & CLIENTS</SectionPill>
           <h2 className="display-heading">FROM OTT TO FILM, MUSIC, FMCG, FINANCE, AND HOSPITALITY.</h2>
           <p className="section-copy">This roster reflects the range of brands I have helped grow.</p>

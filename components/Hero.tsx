@@ -71,14 +71,6 @@ export function Hero({ portfolio }: { portfolio: Portfolio }) {
             }}
           />
           <div className="absolute right-7 top-7 h-20 w-20 border-[var(--border-width)] border-[var(--color-amber)]" aria-hidden="true" />
-          <div className="absolute bottom-8 left-8 border-[var(--border-width)] border-[var(--color-border-dark)] bg-[var(--color-bg-dark)] px-5 py-4 text-[var(--color-text-on-dark)]">
-            <span className="block text-[10px] font-bold tracking-[0.12em] text-[rgba(248,244,255,0.5)]">
-              YEARS EXPERIENCE
-            </span>
-            <strong className="mt-1 block text-[36px] font-black tracking-[-0.03em] text-[var(--color-amber)]">
-              7+
-            </strong>
-          </div>
         </motion.div>
       </div>
       <div className="flex h-[72px] items-center overflow-hidden border-y-[var(--border-width)] border-[var(--color-border-dark)] bg-[var(--color-accent)]">

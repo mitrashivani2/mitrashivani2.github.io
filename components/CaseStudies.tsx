@@ -28,22 +28,19 @@ const studyImages: Record<string, StaticImageData> = {
 };
 
 function WorkCardVisual({ study, index }: { study: CaseStudy; index: number }) {
-  const background = index % 2 === 0 ? "bg-[var(--color-accent-tint)]" : "bg-[var(--color-amber-tint)]";
-  const overlay = index % 2 === 0 ? "var(--color-accent-tint)" : "var(--color-amber-tint)";
   const cardNumber = String(index + 1).padStart(2, "0");
   const studyImage = studyImages[study.title];
 
   return (
-    <div className={`relative min-h-[220px] overflow-hidden px-5 pt-5 ${background}`}>
+    <div className="relative min-h-[220px] overflow-hidden bg-[var(--color-text-primary)] px-5 pt-5">
       <Image
         src={studyImage}
         alt={`${study.brand} campaign visual`}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ opacity: 0.35 }}
+        style={{ opacity: 1 }}
       />
-      <div className="absolute inset-0" style={{ background: overlay, opacity: 0.55 }} />
       <span className="absolute left-5 top-5 text-[11px] font-bold tracking-[0.1em] text-[var(--color-accent)] uppercase">
         {study.category}
       </span>
