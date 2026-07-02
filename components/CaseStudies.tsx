@@ -28,11 +28,10 @@ const studyImages: Record<string, StaticImageData> = {
 };
 
 function WorkCardVisual({ study, index }: { study: CaseStudy; index: number }) {
-  const cardNumber = String(index + 1).padStart(2, "0");
   const studyImage = studyImages[study.title];
 
   return (
-    <div className="relative min-h-[220px] overflow-hidden bg-[var(--color-text-primary)] px-5 pt-5">
+    <div className="relative min-h-[220px] overflow-hidden bg-[var(--color-text-primary)]">
       <Image
         src={studyImage}
         alt={`${study.brand} campaign visual`}
@@ -41,18 +40,6 @@ function WorkCardVisual({ study, index }: { study: CaseStudy; index: number }) {
         className="absolute inset-0 h-full w-full object-cover"
         style={{ opacity: 1 }}
       />
-      <span className="absolute left-5 top-5 text-[11px] font-bold tracking-[0.1em] text-[var(--color-accent)] uppercase">
-        {study.category}
-      </span>
-      <span className="absolute right-5 top-5 text-[11px] font-bold tracking-[0.12em] text-[var(--color-text-muted)] uppercase">
-        {study.brand}
-      </span>
-      <span className="pointer-events-none absolute bottom-[-10px] left-5 select-none text-[clamp(80px,12vw,140px)] font-black leading-none tracking-[-0.06em] text-[var(--color-amber)] opacity-25">
-        {cardNumber}
-      </span>
-      <span className="absolute bottom-5 right-5 text-[11px] font-bold tracking-[0.1em] text-[var(--color-text-muted)] uppercase">
-        {cardNumber} / 07
-      </span>
     </div>
   );
 }
