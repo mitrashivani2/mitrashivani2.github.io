@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" role="img" aria-labelledby="title">
+  <title id="title">HYBE India city amplification campaign cover</title>
+  <rect width="1200" height="450" fill="#191623"/>
+  <path d="M657 0v450M825 0v450M993 0v450M0 112h1200M0 225h1200M0 338h1200" stroke="#4e3e62" stroke-width="2"/>
+  <circle cx="829" cy="225" r="125" fill="#8d66ba"/>
+  <circle cx="1083" cy="95" r="72" fill="#e8a838"/>
+  <circle cx="1005" cy="362" r="55" fill="#f8f4ff"/>
+  <path d="M804 100v250M704 225h250" stroke="#191623" stroke-width="7"/>
+  <rect x="56" y="38" width="100" height="5" fill="#e8a838"/>
+  <text x="56" y="84" fill="#f8f4ff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="5">MUSIC  /  CULTURE  /  CITIES</text>
+  <text x="49" y="248" fill="#f8f4ff" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-4">HYBE</text>
+  <text x="49" y="354" fill="#e8a838" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-4">INDIA</text>
+  <text x="56" y="418" fill="#f8f4ff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="4">CITY AMPLIFICATION  /  2026</text>
+</svg>

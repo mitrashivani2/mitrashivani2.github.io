@@ -14,7 +14,7 @@ export type ExpertiseGroup = {
   items: string[];
 };
 
-export type CaseStudyTone = "streaming" | "cinema" | "music" | "finance";
+export type CaseStudyTone = "streaming" | "cinema" | "music" | "finance" | "fmcg";
 
 export type CaseStudy = {
   title: string;

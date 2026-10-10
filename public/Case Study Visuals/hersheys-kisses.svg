@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" role="img" aria-labelledby="title">
+  <title id="title">Hershey's Kisses Rakshabandhan campaign cover</title>
+  <rect width="1200" height="450" fill="#501c38"/>
+  <path d="M0 325c178-60 273-57 425 8s284 64 430-18 238-84 345-35v170H0Z" fill="#712b4b"/>
+  <rect x="696" y="50" width="430" height="260" fill="#f6e7e3" transform="rotate(8 911 180)"/>
+  <rect x="734" y="80" width="356" height="175" fill="#a14568" transform="rotate(8 912 168)"/>
+  <circle cx="850" cy="155" r="34" fill="#efbbab"/>
+  <circle cx="974" cy="171" r="34" fill="#efbbab"/>
+  <path d="M788 235c35-49 86-49 124 0m8 10c36-49 88-49 124 0" fill="none" stroke="#f6e7e3" stroke-width="21" stroke-linecap="round"/>
+  <rect x="56" y="38" width="100" height="5" fill="#e8a838"/>
+  <text x="56" y="84" fill="#f9ede8" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="5">HERSHEY'S KISSES</text>
+  <text x="49" y="242" fill="#f9ede8" font-family="Arial, Helvetica, sans-serif" font-size="85" font-weight="900" letter-spacing="-3">BILLBOARD</text>
+  <text x="49" y="338" fill="#e8a838" font-family="Arial, Helvetica, sans-serif" font-size="85" font-weight="900" letter-spacing="-3">YOUR BRO</text>
+  <text x="56" y="418" fill="#f9ede8" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="4">RAKSHABANDHAN  /  2026</text>
+</svg>

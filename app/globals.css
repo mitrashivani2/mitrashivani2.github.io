@@ -280,27 +280,6 @@ textarea:focus-visible {
   color: var(--color-text-secondary);
 }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-
-.marquee-content {
-  white-space: nowrap;
-  padding-right: 2rem;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .contact-input,
 .contact-textarea {
   width: 100%;

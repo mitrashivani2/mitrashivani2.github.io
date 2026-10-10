@@ -102,6 +102,66 @@ export const portfolio = {
   ] satisfies ExpertiseGroup[],
   caseStudies: [
     {
+      title: "Hershey's India Summer Syrup",
+      category: "Influencer marketing",
+      brand: "Hershey's India",
+      tone: "fmcg",
+      objective: "Make Hershey's Chocolate Syrup a joyful addition to children's daily milk routine during the summer campaign.",
+      audience: "Indian parents and families reached through mom, parenting, and lifestyle creators on Instagram.",
+      challenge:
+        "A product demonstration needed to feel like part of a relatable mother-child story, while holding attention long enough for the brand message to land.",
+      strategy:
+        "Build creator stories around the everyday milk struggle, using strong opening hooks and a natural product reveal instead of scripted promotion.",
+      execution:
+        "Briefed 50 mid/macro and micro creators on story-led Instagram Reels and reshare Stories, then tracked individual views and engagement to identify the strongest hooks and formats.",
+      platforms: ["Instagram Reels", "Creator partnerships", "Instagram Stories", "Performance reporting"],
+      role: "Senior Account Manager at White Rivers Media, leading creator briefing, campaign execution, and performance review.",
+      teamStructure: "Influencer management, creative briefing, client servicing, and campaign reporting teams.",
+      learnings:
+        "The strongest reels led with curiosity and introduced the product early. The top reel reached 18.6M views, while a slow-opening reel reached 95.4K.",
+      metrics: "48.3M+ views, 22.02M+ reach, 269K+ engagements, and 50 creators activated."
+    },
+    {
+      title: "Hershey's Kisses Rakshabandhan",
+      category: "Festive integrated campaign",
+      brand: "Hershey's India",
+      tone: "fmcg",
+      objective: "Launch the premium Hershey's Kisses Festive Moments pack through a Rakshabandhan idea that drove awareness and on-pack QR scans.",
+      audience: "Siblings, festive gift shoppers, creator audiences, meme communities, and advertising and marketing readers.",
+      challenge:
+        "Turn a seasonal gifting message into something people would share and participate in, while connecting campaign attention to a measurable pack action.",
+      strategy:
+        "Use the 'Billboard Your Bro' sibling prank as one idea across creators, meme pages, PR coverage, and an on-pack QR experience.",
+      execution:
+        "Launched with a real sibling billboard reveal, followed by seven creators, 30 meme pages, six advertising and marketing pages, and QR tracking around the festival.",
+      platforms: ["Instagram Reels", "Meme pages", "PR amplification", "On-pack QR", "Campaign reporting"],
+      role: "Senior Account Manager at White Rivers Media, coordinating the creator, meme, PR, and pack participation tracks.",
+      teamStructure: "Influencer, meme network, PR, creative, analytics, and client servicing teams.",
+      learnings:
+        "A clear human insight travelled across channels without changing the core idea. Creator views beat plan by 17%, and the QR activity peaked around Rakshabandhan.",
+      metrics: "5.6M+ creator and PR views, 215.8K engagements, and 110,177 on-pack QR scans, including 87,451 unique scans."
+    },
+    {
+      title: "HYBE India City Amplification",
+      category: "Music and paid media",
+      brand: "HYBE India",
+      tone: "music",
+      objective: "Build Gen Z awareness for HYBE India Pop-Up Park events and drive audition interest across Indian cities.",
+      audience: "Gen Z music fans in major Indian metros, with age-appropriate targeting across Meta and Google.",
+      challenge:
+        "Each city needed locally relevant content, while paid media had to reach national scale and work within different platform age policies.",
+      strategy:
+        "Pair city-specific Instagram publication bursts around each event with separate Meta and Google campaigns for awareness, video engagement, and registration intent.",
+      execution:
+        "Activated 40+ city and music pages across six markets, timed pre- and post-event content, and ran Meta objectives alongside Google Performance Max and YouTube TrueView across eight metros.",
+      platforms: ["Instagram city pages", "Meta Ads", "Google Performance Max", "YouTube TrueView"],
+      role: "Senior Account Manager at White Rivers Media, leading city amplification and the coordinated paid media rollout.",
+      teamStructure: "City publication partners, paid media, creative, campaign reporting, and client servicing teams.",
+      learnings:
+        "Local publication voices made the events feel relevant city by city, while objective-led paid media extended reach and captured interest in auditions.",
+      metrics: "11M+ city page views against a 3.8M+ commitment, 246M+ Meta and Google impressions, and 63K+ Google website clicks."
+    },
+    {
       title: "Glenmark Scalp Influencer Engine",
       category: "Influencer marketing",
       brand: "Glenmark Scalp",
@@ -122,28 +182,6 @@ export const portfolio = {
       metrics:
         "17.57M views against a 10.4M plan, CPV improved from Rs0.72 planned to Rs0.42 achieved, 61 creators across 12 genres, and 58.7% of all views driven by the top 18 creators.",
       link: "https://www.whiteriversmedia.com/case-study/scaple"
-    },
-    {
-      title: "The Kashmir Files Social Campaign",
-      category: "Film launch campaign",
-      brand: "Zee Studios",
-      tone: "cinema",
-      objective: "Convert audience sentiment around a politically sensitive film into awareness, intent, and sustained theatrical conversation.",
-      audience: "Cinema audiences, cultural commentators, community advocates, political conversation clusters, and mainstream film viewers.",
-      challenge:
-        "The film had no big star cast, modest industry expectations, and a subject that required emotional precision without reducing the campaign to political propaganda.",
-      strategy:
-        "Frame the campaign as #RightToJustice, a movement-led story about a community's right to be heard, then use social sentiment to sustain theatrical demand.",
-      execution:
-        "Sequenced survivor-led context, influencer mobilisation, real-time Twitter conversation, audience reactions, milestone storytelling, and post-release amplification.",
-      platforms: ["Instagram", "Facebook", "YouTube", "Twitter", "Influencer networks", "Paid amplification"],
-      role: "Account Manager and full campaign lead across social channels for Zee Studios at White Rivers Media.",
-      teamStructure: "Strategy, organic social, influencer, creative, media, sentiment management, and client servicing teams.",
-      learnings:
-        "The campaign showed that social media's most powerful role is sustaining momentum beyond launch day when conversation and box office need to move together.",
-      metrics:
-        "54.3M+ reach, 50M+ views, 314M+ impressions, 3.1M+ engagements, 5M+ tickets sold, and Rs290Cr+ India box office over a 50+ day theatrical run.",
-      link: "https://drive.google.com/file/d/1kDMdvlQefubZxK5UApdY2xzSBalL7d3v/view?usp=drive_link"
     },
     {
       title: "Sony Music India Organic Growth",
@@ -187,6 +225,28 @@ export const portfolio = {
       metrics:
         "65M unique reach, 50M content views, 31K+ mentions, 139M GIF views, 22.8K tweets, and IMDb's Most Popular Indian Web Series 2022 (So Far).",
       link: "https://drive.google.com/file/d/1WDREjgbHq6ekxi8I1tgsriuve4GIPy9m/view?usp=drive_link"
+    },
+    {
+      title: "The Kashmir Files Social Campaign",
+      category: "Film launch campaign",
+      brand: "Zee Studios",
+      tone: "cinema",
+      objective: "Convert audience sentiment around a politically sensitive film into awareness, intent, and sustained theatrical conversation.",
+      audience: "Cinema audiences, cultural commentators, community advocates, political conversation clusters, and mainstream film viewers.",
+      challenge:
+        "The film had no big star cast, modest industry expectations, and a subject that required emotional precision without reducing the campaign to political propaganda.",
+      strategy:
+        "Frame the campaign as #RightToJustice, a movement-led story about a community's right to be heard, then use social sentiment to sustain theatrical demand.",
+      execution:
+        "Sequenced survivor-led context, influencer mobilisation, real-time Twitter conversation, audience reactions, milestone storytelling, and post-release amplification.",
+      platforms: ["Instagram", "Facebook", "YouTube", "Twitter", "Influencer networks", "Paid amplification"],
+      role: "Account Manager and full campaign lead across social channels for Zee Studios at White Rivers Media.",
+      teamStructure: "Strategy, organic social, influencer, creative, media, sentiment management, and client servicing teams.",
+      learnings:
+        "The campaign showed that social media's most powerful role is sustaining momentum beyond launch day when conversation and box office need to move together.",
+      metrics:
+        "54.3M+ reach, 50M+ views, 314M+ impressions, 3.1M+ engagements, 5M+ tickets sold, and Rs290Cr+ India box office over a 50+ day theatrical run.",
+      link: "https://drive.google.com/file/d/1kDMdvlQefubZxK5UApdY2xzSBalL7d3v/view?usp=drive_link"
     },
     {
       title: "Bhediya Integrated Launch",

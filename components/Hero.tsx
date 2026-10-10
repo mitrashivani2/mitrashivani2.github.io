@@ -9,14 +9,6 @@ import { withBasePath } from "@/lib/site";
 
 export function Hero({ portfolio }: { portfolio: Portfolio }) {
   const { personal } = portfolio;
-  const marqueeItems = [
-    "AUDIENCE GROWTH",
-    "CAMPAIGN STRATEGY",
-    "DIGITAL CULTURE",
-    "314M+ IMPRESSIONS",
-    "1.7M COMMUNITY",
-    "7+ YEARS"
-  ];
 
   return (
     <section id="hero" className="overflow-hidden bg-[var(--color-bg-page)] pt-16">
@@ -72,29 +64,6 @@ export function Hero({ portfolio }: { portfolio: Portfolio }) {
           />
           <div className="absolute right-7 top-7 h-20 w-20 border-[var(--border-width)] border-[var(--color-amber)]" aria-hidden="true" />
         </motion.div>
-      </div>
-      <div className="flex h-[72px] items-center overflow-hidden border-y-[var(--border-width)] border-[var(--color-border-dark)] bg-[var(--color-accent)]">
-        <div className="marquee-track uppercase">
-          <span className="marquee-content flex items-center text-[15px] font-bold tracking-[0.12em] text-[var(--color-text-on-dark)]">
-            {marqueeItems.map((item) => (
-              <span key={item} className="flex items-center">
-                <span>{item}</span>
-                <span className="mx-5 text-[var(--color-amber)]">✦</span>
-              </span>
-            ))}
-          </span>
-          <span
-            className="marquee-content flex items-center text-[15px] font-bold tracking-[0.12em] text-[var(--color-text-on-dark)]"
-            aria-hidden="true"
-          >
-            {marqueeItems.map((item) => (
-              <span key={`repeat-${item}`} className="flex items-center">
-                <span>{item}</span>
-                <span className="mx-5 text-[var(--color-amber)]">✦</span>
-              </span>
-            ))}
-          </span>
-        </div>
       </div>
     </section>
   );

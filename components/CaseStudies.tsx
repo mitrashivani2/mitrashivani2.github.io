@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import { fadeUp, modalOverlay, modalPanel, staggerContainer } from "@/lib/animations";
+import { withBasePath } from "@/lib/site";
 import type { Portfolio } from "@/data/portfolio";
 import type { CaseStudy } from "@/types/portfolio";
 import { SectionPill } from "./SectionHeader";
@@ -17,7 +18,10 @@ import scalpImage from "../case study images /Scalp.png";
 import sonyMusicImage from "../case study images /Sony Music India.png";
 import zwigatoImage from "../case study images /Zwigato.png";
 
-const studyImages: Record<string, StaticImageData> = {
+const studyImages: Record<string, StaticImageData | string> = {
+  "Hershey's India Summer Syrup": "/Case Study Visuals/hersheys-summer-syrup.svg",
+  "Hershey's Kisses Rakshabandhan": "/Case Study Visuals/hersheys-kisses.svg",
+  "HYBE India City Amplification": "/Case Study Visuals/hybe-india.svg",
   "Glenmark Scalp Influencer Engine": scalpImage,
   "The Kashmir Files Social Campaign": kashmirFilesImage,
   "Sony Music India Organic Growth": sonyMusicImage,
@@ -27,18 +31,17 @@ const studyImages: Record<string, StaticImageData> = {
   "Zwigato Integrated Campaign": zwigatoImage
 };
 
-function WorkCardVisual({ study, index }: { study: CaseStudy; index: number }) {
+function WorkCardVisual({ study }: { study: CaseStudy }) {
   const studyImage = studyImages[study.title];
 
   return (
-    <div className="relative min-h-[220px] overflow-hidden bg-[var(--color-text-primary)]">
+    <div className="relative aspect-[8/3] min-h-[220px] overflow-hidden bg-[var(--color-text-primary)]">
       <Image
-        src={studyImage}
+        src={typeof studyImage === "string" ? withBasePath(studyImage) : studyImage}
         alt={`${study.brand} campaign visual`}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="absolute inset-0 h-full w-full object-cover"
-        style={{ opacity: 1 }}
+        className="absolute inset-0 h-full w-full object-cover object-left"
       />
     </div>
   );
@@ -55,11 +58,9 @@ function DetailRow({ label, value }: { label: string; value: string }) {
 
 function CaseStudyModal({
   study,
-  index,
   onClose
 }: {
   study: CaseStudy;
-  index: number;
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -112,7 +113,7 @@ function CaseStudyModal({
           </button>
         </div>
 
-        <WorkCardVisual study={study} index={index} />
+        <WorkCardVisual study={study} />
         <div className="grid gap-8 px-5 py-6 lg:grid-cols-[0.72fr_1fr] lg:px-8 lg:py-8">
           <div>
             <SectionPill>{study.brand}</SectionPill>
@@ -160,7 +161,7 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
           </div>
           <p className="section-copy pt-0 lg:pt-10">
             These case studies show how audience insight, cultural timing, and disciplined execution
-            came together across launches, OTT, film, and influencer campaigns.
+            came together across FMCG, music, OTT, film, and influencer campaigns.
           </p>
         </div>
 
@@ -175,11 +176,9 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
             <motion.article
               key={study.title}
               variants={fadeUp}
-              className={`overflow-hidden border-[var(--border-width)] border-[var(--color-border)] transition-colors duration-200 hover:border-[var(--color-accent)] ${
-                index === portfolio.caseStudies.length - 1 ? "lg:col-span-2" : ""
-              }`}
+              className="overflow-hidden border-[var(--border-width)] border-[var(--color-border)] transition-colors duration-200 hover:border-[var(--color-accent)]"
             >
-              <WorkCardVisual study={study} index={index} />
+              <WorkCardVisual study={study} />
               <div className="h-[2px] bg-[var(--color-border)]" aria-hidden="true" />
               <div className="flex h-full flex-col bg-[var(--color-bg-card)] px-6 py-5">
                 <div className="flex items-start justify-between gap-4">
@@ -208,7 +207,7 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
       </div>
       <AnimatePresence>
         {activeStudy ? (
-          <CaseStudyModal study={activeStudy} index={activeIndex ?? 0} onClose={() => setActiveIndex(null)} />
+          <CaseStudyModal study={activeStudy} onClose={() => setActiveIndex(null)} />
         ) : null}
       </AnimatePresence>
     </section>
