@@ -10,12 +10,12 @@ import type { Portfolio } from "@/data/portfolio";
 import type { CaseStudy } from "@/types/portfolio";
 import { SectionPill } from "./SectionHeader";
 
-import apharanImage from "../case study images /Apharan 2 (2).png";
-import bhediyaImage from "../case study images /Bhediya.png";
-import kashmirFilesImage from "../case study images /Kashmir Files.png";
-import loveHostelImage from "../case study images /Love Hostel.png";
-import scalpImage from "../case study images /Scalp.png";
-import sonyMusicImage from "../case study images /Sony Music India.png";
+import apharanImage from "../case study images /Apharan 2_1766x664.jpg";
+import bhediyaImage from "../case study images /Bhediya_1766x664.jpg";
+import kashmirFilesImage from "../case study images /Kashmir Files_1766x664.jpg";
+import loveHostelImage from "../case study images /Love Hostel_1766x664.jpg";
+import scalpImage from "../case study images /Scalp_1766x664.jpg";
+import sonyMusicImage from "../case study images /Sony Music India_1766x664.jpg";
 import zwigatoImage from "../case study images /Zwigato.png";
 
 const studyImages: Record<string, StaticImageData | string> = {

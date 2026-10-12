@@ -10,9 +10,9 @@ export const portfolio = {
     email: "mitra.shivani2@gmail.com",
     phone: "+91-7999368670",
     linkedin: "https://www.linkedin.com/in/shivanimitra30/",
-    resume: "/Shivani_Mitra_Resume_ATS.pdf",
+    resume: "/Shivani_Mitra_Resume_2026.pdf",
     resumeDoc: "/Shivani_Mitra_Resume_ATS.docx",
-    resumePdf: "/Shivani_Mitra_Resume_ATS.pdf",
+    resumePdf: "/Shivani_Mitra_Resume_2026.pdf",
     portrait: "/IMG_6355.JPG"
   },
   metrics: [

@@ -7,7 +7,7 @@ import { SectionPill } from "./SectionHeader";
 export function Contact({ portfolio }: { portfolio: Portfolio }) {
   const { personal } = portfolio;
   const contactHref = `mailto:${personal.email}`;
-  const resumeHref = withBasePath("/Shivani_Mitra_Resume_June_2026.pdf");
+  const resumeHref = withBasePath(personal.resumePdf);
   const telHref = `tel:${personal.phone.replace(/[^\d+]/g, "")}`;
 
   return (
