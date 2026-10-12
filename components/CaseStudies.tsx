@@ -10,12 +10,12 @@ import type { Portfolio } from "@/data/portfolio";
 import type { CaseStudy } from "@/types/portfolio";
 import { SectionPill } from "./SectionHeader";
 
-import apharanImage from "../case study images /Apharan 2_1766x664.jpg";
-import bhediyaImage from "../case study images /Bhediya_1766x664.jpg";
-import kashmirFilesImage from "../case study images /Kashmir Files_1766x664.jpg";
-import loveHostelImage from "../case study images /Love Hostel_1766x664.jpg";
-import scalpImage from "../case study images /Scalp_1766x664.jpg";
-import sonyMusicImage from "../case study images /Sony Music India_1766x664.jpg";
+import apharanImage from "../case study images /Apharan 2 (2).png";
+import bhediyaImage from "../case study images /Bhediya.png";
+import kashmirFilesImage from "../case study images /Kashmir Files.png";
+import loveHostelImage from "../case study images /Love Hostel.png";
+import scalpImage from "../case study images /Scalp.png";
+import sonyMusicImage from "../case study images /Sony Music India.png";
 import zwigatoImage from "../case study images /Zwigato.png";
 
 const studyImages: Record<string, StaticImageData | string> = {
@@ -31,17 +31,26 @@ const studyImages: Record<string, StaticImageData | string> = {
   "Zwigato Integrated Campaign": zwigatoImage
 };
 
+const bannerBackgrounds: Record<string, string> = {
+  "Hershey's India Summer Syrup": "#362019",
+  "Hershey's Kisses Rakshabandhan": "#501c38",
+  "HYBE India City Amplification": "#191623"
+};
+
 function WorkCardVisual({ study }: { study: CaseStudy }) {
   const studyImage = studyImages[study.title];
 
   return (
-    <div className="relative aspect-[8/3] min-h-[220px] overflow-hidden bg-[var(--color-text-primary)]">
+    <div
+      className="relative aspect-[7/4] w-full overflow-hidden bg-[var(--color-text-primary)]"
+      style={{ backgroundColor: bannerBackgrounds[study.title] }}
+    >
       <Image
         src={typeof studyImage === "string" ? withBasePath(studyImage) : studyImage}
         alt={`${study.brand} campaign visual`}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="absolute inset-0 h-full w-full object-cover object-left"
+        className="object-contain"
       />
     </div>
   );
@@ -170,17 +179,17 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-14 grid items-start gap-3 lg:grid-cols-2"
+          className="mt-14 grid items-stretch gap-3 lg:grid-cols-2"
         >
           {portfolio.caseStudies.map((study, index) => (
             <motion.article
               key={study.title}
               variants={fadeUp}
-              className="overflow-hidden border-[var(--border-width)] border-[var(--color-border)] transition-colors duration-200 hover:border-[var(--color-accent)]"
+              className="flex h-full flex-col overflow-hidden border-[var(--border-width)] border-[var(--color-border)] transition-colors duration-200 hover:border-[var(--color-accent)]"
             >
               <WorkCardVisual study={study} />
               <div className="h-[2px] bg-[var(--color-border)]" aria-hidden="true" />
-              <div className="flex h-full flex-col bg-[var(--color-bg-card)] px-6 py-5">
+              <div className="flex flex-1 flex-col bg-[var(--color-bg-card)] px-6 py-5">
                 <div className="flex items-start justify-between gap-4">
                   <span className="text-[11px] font-semibold tracking-[0.1em] text-[var(--color-text-muted)] uppercase">
                     {study.category}
@@ -192,14 +201,16 @@ export function CaseStudies({ portfolio }: { portfolio: Portfolio }) {
                   {study.title}
                 </h3>
                 <p className="body-small line-clamp-3 mt-3 max-w-none">{study.metrics}</p>
-                <button
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className="btn btn-outline-purple mt-4 w-fit px-5 py-2.5 text-[11px]"
-                  aria-label={`Open ${study.title} case study`}
-                >
-                  VIEW CASE STUDY <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </button>
+                <div className="mt-auto pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className="btn btn-outline-purple w-fit px-5 py-2.5 text-[11px]"
+                    aria-label={`Open ${study.title} case study`}
+                  >
+                    VIEW CASE STUDY <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
               </div>
             </motion.article>
           ))}
